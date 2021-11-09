@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnQRBascula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/escanear"
@@ -50,10 +50,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnQRBascula" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnQRSector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/escanear"
@@ -82,5 +82,5 @@
         app:layout_constraintBottom_toTopOf="@+id/btnAceptar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnQRSector" />
 </androidx.constraintlayout.widget.ConstraintLayout>
