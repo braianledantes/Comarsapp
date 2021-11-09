@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Comarsapp</string>
+    <string name="escanear">Escanear</string>
+    <string name="qr_sector_descarga">QR Sector Descarga</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="qr_identificacion">QR Identificación</string>
 </resources>
