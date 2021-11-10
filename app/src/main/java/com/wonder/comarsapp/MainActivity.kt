@@ -1,11 +1,10 @@
 package com.wonder.comarsapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.wonder.comarsapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obtenerSector() {
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofit().create(APIService::class.java).getRemito("88888")
             val remito = call.body()
 
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("192.168.0.20:3000/")
+            .baseUrl("http://192.168.0.20:3000/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
