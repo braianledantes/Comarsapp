@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.google.zxing.integration.android.IntentIntegrator
 import com.wonder.comarsapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -68,7 +69,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "El valor escaneado es: " + result.contents, Toast.LENGTH_LONG).show()
                 binding.tvResult.text = result.contents
                 try {
-                    obtenerSector(result.contents.toInt())
+                    //obtenerSector(result.contents.toInt())
+                    val gson = Gson()
+                    val remito = gson.fromJson(result.contents, RemitoResponse::class.java)
+                    showResult(remito)
                 } catch (e: Exception) {
                     showError("no es un entero: ${result.contents}")
                 }
